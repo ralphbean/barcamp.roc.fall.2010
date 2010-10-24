@@ -39,3 +39,5 @@ base_config.use_sqlalchemy = True
 base_config.model = melissa_is_a_babe.model
 base_config.DBSession = melissa_is_a_babe.model.DBSession
 
+base_config.use_toscawidgets = False
+base_config.use_toscawidgets2 = True
