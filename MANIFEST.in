@@ -1,0 +1,4 @@
+recursive-include melissa_is_a_babe/public *
+include melissa_is_a_babe/public/favicon.ico
+recursive-include melissa_is_a_babe/i18n *
+recursive-include melissa_is_a_babe/templates *
