@@ -73,6 +73,7 @@ class RootController(BaseController):
             combos += list(itertools.combinations(words, i+1))
 
         data = pool.map(make_entry, combos)
+        data.sort(lambda x, y: cmp(y['value'], x['value']))
 
         chart = BubbleChart(
             id='a-chart-for-my-friends',
