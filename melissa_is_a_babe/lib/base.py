@@ -5,7 +5,6 @@
 from tg import TGController, tmpl_context
 from tg.render import render
 from pylons.i18n import _, ungettext, N_
-from tw.api import WidgetBunch
 import melissa_is_a_babe.model as model
 
 __all__ = ['BaseController']
