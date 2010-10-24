@@ -44,6 +44,8 @@ def make_entry(combo):
         'group' : len(combo),
     }
 
+from multiprocessing import Pool
+pool = Pool(processes=150)
 
 class RootController(BaseController):
     """
@@ -70,7 +72,7 @@ class RootController(BaseController):
         for i in range(len(words)):
             combos += list(itertools.combinations(words, i+1))
 
-        data = map(make_entry, combos)
+        data = pool.map(make_entry, combos)
 
         chart = BubbleChart(
             id='a-chart-for-my-friends',
