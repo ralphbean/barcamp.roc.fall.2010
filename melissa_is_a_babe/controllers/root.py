@@ -10,6 +10,8 @@ from melissa_is_a_babe.controllers.error import ErrorController
 
 __all__ = ['RootController']
 
+from tw2.protovis.custom import BubbleChart
+import random
 
 class RootController(BaseController):
     """
@@ -31,4 +33,19 @@ class RootController(BaseController):
     @expose('melissa_is_a_babe.templates.index')
     def index(self):
         """Handle the front-page."""
-        return dict(page='index')
+        data = [
+            {
+                'name' : random.random(),
+                'value' : random.random(),
+                'text' : random.random(),
+                'group' : random.random(),
+            } for i in range(40) ]
+
+        chart = BubbleChart(
+            id='a-chart-for-my-friends',
+            p_width=750,
+            p_height=750,
+            p_data=data
+        )
+
+        return dict(page='index', widget=chart)
