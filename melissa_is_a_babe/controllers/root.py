@@ -32,21 +32,3 @@ class RootController(BaseController):
     def index(self):
         """Handle the front-page."""
         return dict(page='index')
-
-    @expose('melissa_is_a_babe.templates.about')
-    def about(self):
-        """Handle the 'about' page."""
-        return dict(page='about')
-
-    @expose('melissa_is_a_babe.templates.environ')
-    def environ(self):
-        """This method showcases TG's access to the wsgi environment."""
-        return dict(environment=request.environ)
-
-    @expose('melissa_is_a_babe.templates.data')
-    @expose('json')
-    def data(self, **kw):
-        """This method showcases how you can use the same controller for a data page and a display page"""
-        return dict(params=kw)
-
-
